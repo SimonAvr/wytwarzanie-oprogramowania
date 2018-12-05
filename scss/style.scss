@@ -1,0 +1,178 @@
+@font-face {
+  font-family: Poker;
+  src: url(../fonts/PokerInOctober-Demo.otf);
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Poker', 'sans-serif';
+  box-sizing: border-box;
+}
+
+body{
+  background-image: url("https://drinkinggamezone.com/img/games/movie/casino-royale.jpg");
+  overflow: auto;
+}
+
+button, #display{
+  font-size: 40px;
+  background-color: rgba($color: #2F3530, $alpha: 0.95);
+  border: 1px solid #AE7623;
+  border-radius: 10px;
+  color: #AE7623;
+  //text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  
+}
+
+#wrapper{
+  height: 80vh;
+  min-height: 700px;
+  width: 35%;
+  margin: 10vh auto;
+  display: grid;
+  grid-row-gap: 10px;
+  grid-column-gap: 10px;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 2fr 4fr 4fr;
+  grid-template-areas: "disp disp" "key ops" "key ops" "chips-table chips-table";
+}
+
+#display{
+  grid-area: disp;
+  padding: 35px 10px;
+  text-align: right;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+#keypad{
+  grid-area: key;
+  display: grid;
+  grid-gap: 8px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-areas: "one two three" "four five six" "seven eight nine" "dot zero brackets";
+}
+
+#operations{
+  grid-area: ops;
+  display: grid;
+  grid-gap: 8px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-areas: "plus minus" "asterisk slash"                              "convert convert" "eq eq";
+}
+
+#chips{
+  grid-area: chips-table;
+  align-self: stretch;
+  color: #AE7623;
+
+  tr {
+    display: flex;
+    border-bottom: 1px solid #AE7623;
+    border-left: 1px solid #AE7623;
+    border-right: 1px solid #AE7623;
+    background-color: rgba($color: #2F3530, $alpha: 0.95);
+    height: 40px;
+
+    &:first-of-type{
+      border-top: 1px solid #AE7623;
+    }
+
+    td{
+      display: flex;
+      align-items: center;
+
+      &:first-child{
+        border-right: 1px solid #AE7623;
+        width: 50%;
+        justify-content: flex-end;
+        padding-right: 5px;
+      }
+
+      &:nth-of-type(2){
+        justify-content: center;
+        width: 50%;
+      }
+    }
+  }
+}
+
+#add{
+  grid-area: plus;
+}
+
+#substract{
+  grid-area: minus;
+}
+
+#multiply{
+  grid-area: asterisk;
+}
+
+#divide{
+  grid-area: slash;
+}
+
+#to-chips{
+  grid-area: convert;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+#equals{
+  grid-area: eq;
+}
+
+#brackets{
+  display: flex;
+  justify-content: space-between;
+}
+
+.bracket{
+  width: 50%;
+  
+  &:first-of-type{
+    margin-right: 4px;
+  }
+  
+  &:last-of-type{
+    margin-left: 4px;
+  }
+}
+
+#key-1 {
+  grid-area: one;
+}
+#key-2 {
+  grid-area: two;
+}
+#key-3 {
+  grid-area: three;
+}
+#key-4 {
+  grid-area: four;
+}
+#key-5 {
+  grid-area: five;
+}
+#key-6 {
+  grid-area: six;
+}
+#key-7 {
+  grid-area: seven;
+}
+#key-8 {
+  grid-area: eight;
+}
+#key-9 {
+  grid-area: nine;
+}
+#key-0 {
+  grid-area: zero;
+}
+#key-dot {
+  grid-area: dot;
+}

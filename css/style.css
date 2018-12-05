@@ -1,0 +1,260 @@
+@font-face {
+  font-family: Poker;
+  src: url(../fonts/PokerInOctober-Demo.otf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poker', 'sans-serif';
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-image: url("https://drinkinggamezone.com/img/games/movie/casino-royale.jpg");
+  overflow: auto;
+}
+
+button, #display {
+  font-size: 40px;
+  background-color: rgba(47, 53, 48, 0.95);
+  border: 1px solid #AE7623;
+  border-radius: 10px;
+  color: #AE7623;
+}
+
+#wrapper {
+  height: 80vh;
+  min-height: 700px;
+  width: 35%;
+  margin: 10vh auto;
+  display: -ms-grid;
+  display: grid;
+  grid-row-gap: 10px;
+  grid-column-gap: 10px;
+  -ms-grid-columns: 2fr 1fr;
+      grid-template-columns: 2fr 1fr;
+  -ms-grid-rows: 2fr 4fr 4fr;
+      grid-template-rows: 2fr 4fr 4fr;
+      grid-template-areas: "disp disp" "key ops" "key ops" "chips-table chips-table";
+}
+
+#display {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: disp;
+  padding: 35px 10px;
+  text-align: right;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+#keypad {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: key;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 8px;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+      grid-template-areas: "one two three" "four five six" "seven eight nine" "dot zero brackets";
+}
+
+#operations {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 2;
+  grid-area: ops;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 8px;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+      grid-template-areas: "plus minus" "asterisk slash"                              "convert convert" "eq eq";
+}
+
+#chips {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: chips-table;
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
+  color: #AE7623;
+}
+
+#chips tr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 1px solid #AE7623;
+  border-left: 1px solid #AE7623;
+  border-right: 1px solid #AE7623;
+  background-color: rgba(47, 53, 48, 0.95);
+  height: 40px;
+}
+
+#chips tr:first-of-type {
+  border-top: 1px solid #AE7623;
+}
+
+#chips tr td {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#chips tr td:first-child {
+  border-right: 1px solid #AE7623;
+  width: 50%;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding-right: 5px;
+}
+
+#chips tr td:nth-of-type(2) {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 50%;
+}
+
+#add {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: plus;
+}
+
+#substract {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: minus;
+}
+
+#multiply {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: asterisk;
+}
+
+#divide {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: slash;
+}
+
+#to-chips {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: convert;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+#equals {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: eq;
+}
+
+#brackets {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.bracket {
+  width: 50%;
+}
+
+.bracket:first-of-type {
+  margin-right: 4px;
+}
+
+.bracket:last-of-type {
+  margin-left: 4px;
+}
+
+#key-1 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: one;
+}
+
+#key-2 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: two;
+}
+
+#key-3 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: three;
+}
+
+#key-4 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: four;
+}
+
+#key-5 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: five;
+}
+
+#key-6 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: six;
+}
+
+#key-7 {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: seven;
+}
+
+#key-8 {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: eight;
+}
+
+#key-9 {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+  grid-area: nine;
+}
+
+#key-0 {
+  -ms-grid-row: 4;
+  -ms-grid-column: 2;
+  grid-area: zero;
+}
+
+#key-dot {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: dot;
+}
