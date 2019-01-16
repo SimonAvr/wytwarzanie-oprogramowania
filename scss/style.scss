@@ -61,7 +61,7 @@ button, #display{
   grid-gap: 8px;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
-  grid-template-areas: "plus minus" "asterisk slash"                              "convert convert" "eq eq";
+  grid-template-areas: "plus minus" "asterisk slash" "convert convert" "eq c";
 }
 
 #chips{
@@ -125,6 +125,12 @@ button, #display{
 #equals{
   grid-area: eq;
 }
+
+#remove{
+  grid-area: c;
+}
+
+
 
 #brackets{
   display: flex;
